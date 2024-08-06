@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "gsub";
+  src: url("assets/GillSansUltraBold.ttf") format("truetype");
+}
+
+@layer base{
+  :root {
+    --color-primary: 0 , 166,251;
+    --color-primary-half: 5, 130, 202;
+    --color-harmony: 232, 238, 255;
+    --color-theory : 5, 125, 204;
+    --color-secondary: 0, 53, 84;
+    --color-accent:232, 238, 255;
+    --color-chocolate: 5, 25, 35;
+    --color-balado: 203, 39, 39;
+    --color-balado-half: 203, 39, 39, .5;
+    --color-txtcolor: 30, 30, 30;
+    --color-bkg: 255, 255, 255;
+  }
+  
+  @media (prefers-color-scheme:dark){
+    :root {
+      --color-primary: 255, 199, 39;
+      --color-primary-half: 255, 199, 39, .5;
+      --color-secondary: 52, 29, 18;
+      --color-accent: 221, 154, 0;
+      --color-chocolate: 128, 95, 15;
+      --color-balado: 203, 39, 39;
+      --color-balado-half: 203, 39, 39, .5;
+      --color-txtcolor: 30, 30, 30;
+      --color-bkg: 255, 255, 255;
+    }
+  }
+}
+
+::selection {
+  background-color: #F0C91A;
+  color: #1E1E1E;
+}
+
+.invertSelection::selection {
+  background-color: white;
+  color: #1E1E1E;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: white;
+}
+
+.text-stroke-1 {
+  -webkit-text-stroke: .5px #341D12;
+}
+
+.text-stroke-half {
+  -webkit-text-stroke: .5px #341D12;
+}
+
+.text-stroke-4 {
+  -webkit-text-stroke: 4px #341D12;
+}
+
+.char{
+  transform: translateY(100%);
+  transition:  all .5s;
+}
+
+.react-multiple-carousel__arrow{
+  background-color: #341d122c;
+  z-index: 10;
+}
