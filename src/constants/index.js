@@ -113,31 +113,9 @@ export const infos = [
 
 const waApi = infos[infos.length - 1].link
 
-const questions = [
-    [
-        "Halo kak. Saya ingin pesan Loka Chipnya kak.",
-        "Tabe kak. Loka Chipnya masih ada?",
-        "Permisi kak. Saya mau pesan Loka Chips rasa ...",
-        "Permisi kak. Aku mau order Loka Chipsnya kak",
-        "Halo kak. Harga Loka Chipsnya berapa ya?",
-        "Tabe kak. Pesan Loka Chips kak, mau tanya harga.",
-    ],
-    [
-        "Halo kak. Saya ingin pesan Loka Chipnya kak, yang rasa ",
-        "Tabe kak. Loka Chipnya masih ada? Saya mau pesan yang ",
-        "Halo kak. Harga Loka Chipsnya berapa ya? Yang rasa ",
-        "Permisi kak. Mau pesan yang rasa ",
-    ]
-]
+
 
 export const getWaApi = (param = false) => {
-    let question = '';
-    
-    if (param === "original" || param === "Chocolate" || param === "balado"){
-        question = (questions[1][Math.floor(Math.random() * questions.length)] + param).replace(/ /g, '%20');
-    } else if (param === false){
-        question = questions[0][Math.floor(Math.random() * questions.length)].replace(/ /g, '%20');
-    }
-
+    let question = 'Halo Kak Saya ingin Betanya tentang ';
     return waApi + question;
 }
