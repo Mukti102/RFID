@@ -102,7 +102,7 @@ export const infos = [
     {
         id: "instagram",
         content: "RFID",
-        link: ""
+        link: "https://www.instagram.com/rfidnusantara?igsh=MTZzYXpnNWJpMTFxag%3D%3D"
     },
     {
         id: "whatsapp",
@@ -115,7 +115,11 @@ const waApi = infos[infos.length - 1].link
 
 
 
-export const getWaApi = (param = false) => {
-    let question = 'Halo Kak Saya ingin Bertanya tentang ';
-    return waApi + question;
+export const getWaApi = (message) => {
+    if(message){
+        return waApi + message
+    }else{
+        let question = 'Halo Kak Saya ingin Bertanya tentang ';
+        return waApi + question;
+    }
 }

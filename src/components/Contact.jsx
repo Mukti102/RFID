@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import gsap, { Power4 } from "gsap/all";
 
 import style from "../styles";
+import { getWaApi } from "../constants";
 
 const Contact = () => {
   const desc = useRef(null);
@@ -58,23 +59,15 @@ const Contact = () => {
 
   const [isSending, setIsSending] = useState(false);
   const [isSendSuccess, setIsSendSuccess] = useState(null);
-  const scriptURL = import.meta.env.VITE_CONTACT_FORM_SHEEDS;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSending(true);
 
     try {
-      const form = e.target;
-      const formData = new FormData(form);
-
-      // const response = await fetch(scriptURL, {
-      //     method: "POST",
-      //     body: formData,
-      // })
-
+      const waUrl = getWaApi(pesanValue);
+      window.location.href = waUrl;
       setIsSendSuccess(true);
-      console.log("Success!", response);
     } catch (error) {
       setIsSendSuccess(false);
       console.error("Error!", error.message);
@@ -83,7 +76,6 @@ const Contact = () => {
     setNamaValue("");
     setEmailValue("");
     setPesanValue("");
-    setIsSending(false);
   };
 
   return (
@@ -93,12 +85,10 @@ const Contact = () => {
         ref={desc}
         className={`${style.paragraph} max-w-3xl mx-auto mb-20 translate-y-52 opacity-0`}
       >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil debitis
-        voluptatem, ipsum similique pariatur in enim amet odit voluptatum,
-        repellendus minima? Sapiente voluptatum modi a officiis saepe architecto
-        amet optio, eaque laboriosam earum. Illo, dolorem obcaecati iure
-        doloremque atque tempore asperiores minima, ducimus optio exercitationem
-        excepturi temporibus perferendis! Dolore, exercitationem!
+        Kami di sini siap membantu Anda! Jangan ragu untuk menghubungi kami jika
+        Anda memiliki pertanyaan, memerlukan informasi lebih lanjut, atau ingin
+        mendiskusikan proyek Anda. Tim kami berdedikasi untuk memberikan layanan
+        terbaik dan menjawab setiap kebutuhan Anda dengan cepat dan efektif.
       </p>
 
       {isSendSuccess !== null ? (
