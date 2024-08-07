@@ -116,6 +116,6 @@ const waApi = infos[infos.length - 1].link
 
 
 export const getWaApi = (param = false) => {
-    let question = 'Halo Kak Saya ingin Betanya tentang ';
+    let question = 'Halo Kak Saya ingin Bertanya tentang ';
     return waApi + question;
 }
